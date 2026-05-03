@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家族帝國 · Royal System</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+/* ✅ 修正：變數要用 -- 不是 – /
+:root {
+--sky: #c8e6f5;
+--sky-light: #e8f4fd;
+--sky-mid: #b0d4ec;
+--pink: #f472b6;
+--gold: #f59e0b;
+--gold-light: #fef3c7;
+--blue-btn: #7ec8e3;
+--blue-btn-dark: #5ab4d4;
+--text-dark: #2d3748;
+--text-mid: #4a5568;
+--text-gray: #a0aec0;
+--white: #ffffff;
+--radius: 16px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+font-family: 'Noto Sans TC', sans-serif;
+background: linear-gradient(160deg, var(--sky), var(--sky-light));
+min-height: 100vh;
+color: var(--text-dark);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/ ===== LOGIN ===== */
+.card {
+background: white;
+padding: 40px;
+border-radius: 20px;
+width: 90%;
+max-width: 400px;
+text-align: center;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+color: #5ab4d4;
+margin-bottom: 10px;
+}
+
+input, select {
+width: 100%;
+padding: 12px;
+margin-top: 10px;
+border-radius: 8px;
+border: 1px solid #ccc;
+}
+
+button {
+margin-top: 20px;
+padding: 12px;
+width: 100%;
+border: none;
+border-radius: 30px;
+background: linear-gradient(135deg,#7ec8e3,#5ab4d4);
+color: white;
+font-size: 16px;
+cursor: pointer;
+}
+
+button:hover {
+opacity: 0.9;
+}
+
+#error {
+color: red;
+margin-top: 10px;
+display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>家族帝國</h1>
+
+<select id="role">
+<option value="">選擇身份</option>
+<option value="admin">小公主</option>
+<option value="user">成員</option>
+</select>
+
+<input type="password" id="pw" placeholder="輸入密碼">
+
+<button onclick="login()">進入</button>
+
+<div id="error">密碼錯誤</div>
+</div>
+
+<script>
+function login(){
+  const role = document.getElementById('role').value;
+  const pw = document.getElementById('pw').value;
+
+  if(role === "admin" && pw === "9999"){
+    alert("登入成功（管理者）");
+  } else if(role === "user" && pw === "1234"){
+    alert("登入成功（使用者）");
+  } else {
+    document.getElementById('error').style.display = 'block';
+  }
+}
+</script>
+
+</body>
+</html>
